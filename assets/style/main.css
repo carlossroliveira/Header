@@ -1,0 +1,263 @@
+html {
+  font-size: 62.5%;
+}
+
+html body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  min-height: 100rem;
+}
+
+html body header {
+  font-family: 'Lato', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 0rem 10rem;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+html body header .banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0.5;
+}
+
+html body header .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 4vw;
+  color: #fff;
+  font-weight: 700;
+  -webkit-transition: 1s;
+  transition: 1s;
+  text-decoration: none;
+  z-index: 1;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: inherit;
+}
+
+html body header .logo span {
+  display: inline-block;
+  padding-top: 10rem;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+
+html body header .one {
+  width: 70%;
+}
+
+html body header .two {
+  opacity: 0;
+}
+
+html body header nav {
+  font-family: 'Lato', sans-serif;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+}
+
+html body header nav ul {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  opacity: 0;
+}
+
+html body header nav ul li {
+  list-style: none;
+}
+
+html body header nav ul li a {
+  color: #fff;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 1.2em;
+  text-decoration: none;
+  cursor: inherit;
+}
+
+html body header nav ul li a:hover {
+  -webkit-transition: .5s ease-out;
+  transition: .5s ease-out;
+  color: tomato;
+}
+
+html body .sticky {
+  height: 8rem;
+}
+
+html body .sticky .banner {
+  opacity: 0;
+}
+
+html body .sticky .logo {
+  position: absolute;
+  font-size: 3.2rem;
+  left: 10rem;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  cursor: pointer;
+}
+
+html body .sticky .one {
+  display: none;
+}
+
+html body .sticky .two {
+  display: block;
+  opacity: 1;
+}
+
+html body .sticky nav > ul {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+  visibility: visible;
+}
+
+html body .sticky nav > ul a {
+  cursor: pointer;
+}
+
+html body p {
+  padding: 1rem;
+  margin-top: 30rem;
+}
+
+@media (max-width: 991px) {
+  html body header {
+    padding: 4rem;
+  }
+  html body header nav ul {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+  }
+  html body header .active ul {
+    position: fixed;
+    top: 8rem;
+    left: 0rem;
+    width: 100%;
+    height: calc(100% - 80px);
+    background-color: #000;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  html body header .active ul li a {
+    font-size: 2.4rem;
+    padding: 0.5rem 1.5rem;
+  }
+  html body .sticky .logo {
+    left: 4rem;
+  }
+  html body .sticky .banner {
+    opacity: 0rem;
+  }
+  html body .sticky .toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 4rem;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    background: tomato url(../img/menu.png);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+  }
+  html body .sticky .toggle.active {
+    background: tomato url(../img/close.png);
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+  }
+  html body .sticky nav ul li {
+    padding: 2.5rem;
+    width: 80%;
+    text-align: center;
+  }
+  html body .sticky nav ul li + li {
+    border-top: 0.1rem solid #ccccccbd;
+  }
+}
+
+@media (max-width: 475px) {
+  html body header .logo {
+    font-size: 1.6rem !important;
+  }
+  html body header .logo span {
+    display: inline-block;
+    padding-top: 5rem;
+    font-size: 1.6rem;
+    letter-spacing: 1rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: tomato;
+  border-radius: 50px;
+  border: 1px solid tomato;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(tomato));
+  background: linear-gradient(transparent, tomato);
+}
+
+::-webkit-scrollbar-button {
+  background-color: tomato;
+}
+/*# sourceMappingURL=main.css.map */
