@@ -1,12 +1,27 @@
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 0);
-});
+
+(() => {
+  // ------------------------------ Start Sticky
+  const elementHeader = document.querySelector('[data-header]');
+
+  function effectSticky() {
+    elementHeader.classList.toggle('sticky', window.scrollY > 0);
+  }
+
+  // Init
+  window.addEventListener('scroll', effectSticky);
+  // ------------------------------ End Sticky
 
 
+  // ------------------------------ Start Btn
+  const elementNav = document.querySelector('[data-nav]');
+  const elementToggle = document.querySelector('[data-toggle]');
 
-const navigation = document.querySelector('nav');
-document.querySelector('.toggle').onclick = function () {
-    this.classList.toggle('active');
-    navigation.classList.toggle('active');
-}
+  function effectBtn() {
+    elementToggle.classList.toggle('active')
+    elementNav.classList.toggle('active');
+  }
+
+  // Init
+  elementToggle.addEventListener('click', effectBtn);
+  // ------------------------------ End Btn
+})();
